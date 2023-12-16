@@ -61,14 +61,22 @@ parser.add_argument(
     metavar="json",
     dest="format",
 )
+parser.add_argument(
+    "-nw",
+    "--next-week",
+    help="set the schedule to the next Nth weeks. default: 1",
+    type=int,
+    nargs="?",
+    default=0,
+    const=1,
+    metavar="N",
+)
 arg = parser.parse_args()
 
 
 url_pattern = re.compile(r"https?://\S+")
 tzinfos = {
     "JST": +9,
-    "CEST": +2,
-    "CET": +1,
     "UTC": -0,
     "GMT": -0,
     "EDT": -4,
@@ -98,12 +106,13 @@ stream_delim = format.get("stream delimiter", ";")
 time_delim = format.get("time delimiter", ",")
 
 
+offset = timedelta(days=7 * arg.next_week)
 standard_time = dateutil.parser.parse(standard_time, tzinfos=tzinfos)
-lastday = dateutil.parser.parse("Sun", default=standard_time)
+lastday = dateutil.parser.parse("Sun", default=standard_time) + offset
 
 
 def parse(*args, **kwargs):
-    date = dateutil.parser.parse(*args, **kwargs)
+    date = dateutil.parser.parse(*args, **kwargs) + offset
     # the parser will select next week if the date is in the past
     if date > lastday:
         date -= timedelta(days=7)
