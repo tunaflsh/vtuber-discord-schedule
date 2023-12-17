@@ -58,7 +58,7 @@ parser.add_argument("schedule", help="text file containing the schedule", metava
 parser.add_argument(
     "-f",
     "--format",
-    help="json file specifying the format",
+    help="json file specifying the format. default: schedule.json",
     default="schedule.json",
     metavar="json",
     dest="format",
