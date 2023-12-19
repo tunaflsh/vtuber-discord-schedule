@@ -115,7 +115,7 @@ for day_schedule, std_schedule in zip(week_schedule, weekdays):
         title, *timestamp = stream.split(time_delim, 1)
         timestamp = int(
             (
-                dateparse(timestamp[0], tzinfos=tzinfos, default=mo)
+                dateparse(timestamp[0], tzinfos=tzinfos, default=std_schedule)
                 if timestamp
                 else std_schedule
             ).timestamp()
