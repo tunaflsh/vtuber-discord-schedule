@@ -1,8 +1,8 @@
 {
-    "heading": "### 💭 Spica Schedule 💗 {startdate} - {enddate} 💭",
+    "heading": "### {startdate} - {enddate}",
     "date format": "%B %d",
     "standard time": "8pm JST",
-    "offline": "SPICA KIDNAPPED",
+    "offline": "Offline",
     "live format": "- <t:{timestamp}:R> {title}",
     "live url format": "- <t:{timestamp}:R> [{title}](<{url}>)",
     "stream delimiter": ";",
