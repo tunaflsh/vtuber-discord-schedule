@@ -32,13 +32,13 @@ parser = argparse.ArgumentParser(
     "\n"
     "\nschedule.txt"
     "\n```"
-    "\nFirst stream https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-    "\nOffline"
-    "\nSecond stream; Third stream, wed 10am EST"
-    "\nOffline"
-    "\nOffline"
-    "\nOffline"
-    "\nOffline"
+    "\nFirst stream https://www.youtube.com/watch?v=dQw4w9WgXcQ # Monday"
+    "\nOffline                                                  # Tuesday"
+    "\nSecond stream; Third stream, wed 10am EST                # Wednesday"
+    "\nOffline                                                  # Thursday"
+    "\nOffline                                                  # Friday"
+    "\nOffline                                                  # Saturday"
+    "\nOffline                                                  # Sunday"
     "\n```"
     "\n"
     "\ndiscordschedule.py schedule.txt -f schedule.json"
@@ -80,6 +80,7 @@ with open(arg.format, "r", encoding="utf-8") as f:
 
 with open(arg.schedule, "r", encoding="utf-8") as f:
     week_schedule = f.read().splitlines()
+    week_schedule = [line.split("#", 1)[0].strip() for line in week_schedule]
 
 
 heading = format["heading"]
