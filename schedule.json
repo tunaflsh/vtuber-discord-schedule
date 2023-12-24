@@ -1,0 +1,19 @@
+{
+    "heading": "### 💭 Spica Schedule 💗 {startdate} - {enddate} 💭",
+    "date format": "%B %d",
+    "standard time": "8pm JST",
+    "offline": "SPICA KIDNAPPED",
+    "live format": "- <t:{timestamp}:R> {title}",
+    "live url format": "- <t:{timestamp}:R> [{title}](<{url}>)",
+    "stream delimiter": ";",
+    "time delimiter": ",",
+    "timezones": {
+        "JST": 9,
+        "CET": 1,
+        "CEST": 2,
+        "EDT": -4,
+        "EST": -5,
+        "PDT": -7,
+        "PST": -8
+    }
+}
