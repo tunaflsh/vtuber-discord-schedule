@@ -40,5 +40,5 @@ The input schedule (`schedule.txt`) should list streams. See example in [schedul
 - Otionaly a URL to the waiting room/live stream can be provided right after the stream title.
 - If there are multiple streams in one day separate them with the `stream delimiter` in [schedule.json](#format-configuration) (by default `;`).
 - Specify live stream time after a `time delimiter` in [schedule.json](#format-configuration) (by default `,`). If the time zone is omitted UTC is assumed.
-If the time is not specified the `standard time` in [schedule.json](#format-configuration) will be used.
+If the time is not specified the `standard time` in [schedule.json](#format-configuration) will be used. For date/time format details see https://dateutil.readthedocs.io/en/stable/parser.html
 - Everything after `#` will be ignored.
