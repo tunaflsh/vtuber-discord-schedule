@@ -167,3 +167,4 @@ cython_debug/
 *.json
 !schedule.example.json
 !schedule.example.txt
+!requirements.txt
